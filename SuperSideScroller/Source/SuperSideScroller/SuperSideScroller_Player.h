@@ -20,6 +20,18 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void Sprint();
 	void StopSprinting();
+	
+	void ThrowProjectile();
+
+	
 private:
 	bool bIsSprinting;
+
+	UPROPERTY(EditAnywhere)
+	class UAnimMontage* ThrowMontage;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class APlayerProjectile> PlayerProjectile;
+
+public:
+	void SpawnProjectile();
 };
